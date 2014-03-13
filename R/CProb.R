@@ -11,6 +11,7 @@
 #' @param alpha
 #' @param R
 #' @param xW
+#' @param minSamp
 #' 
 #' @export
 

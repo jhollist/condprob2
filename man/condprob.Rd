@@ -24,6 +24,8 @@ condprob(xX, xY, xImpair, ProbComp = c("gt", "lt"), Exceed = c("gte",
   \item{R}{}
 
   \item{xW}{}
+
+  \item{minSamp}{}
 }
 \description{
 This function calculates a conditional probability analysis
