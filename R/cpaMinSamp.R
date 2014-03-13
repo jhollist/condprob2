@@ -26,7 +26,7 @@
 #' bivec<-rbinom(100,1,0.5)
 #' cpaMinSamp(bivec,alpha=0.01)
 #' data(binCutoff)
-#' cpaMinSamp(binCutoff,alpha=0.01,n=10)
+#' cpaMinSamp(binCutoff,alpha=0.001,n=10)
 cpaMinSamp<-function(x,R=100,n=5,alpha=0.05){
   
   orig<-vector("numeric",length=R)
@@ -43,7 +43,7 @@ cpaMinSamp<-function(x,R=100,n=5,alpha=0.05){
     test<-pv<alpha
     n<-n+1
     if(pv==0){
-      browser()
+      return(warning("Ties detected, try a larger minimum sample size"))
     }
     if(n==length(x)){
       return(warning("all tested sample sizes resulted in different
