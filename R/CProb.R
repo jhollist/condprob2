@@ -15,7 +15,7 @@
 #' @export
 
 condprob<-function(xX,xY,xImpair,ProbComp = c("gt","lt"),Exceed = c("gte","lte"),
-       ci=FALSE, alpha = 0.05, R=100,xW=rep(1,length(xX)))
+       ci=FALSE, alpha = 0.05, R=100,xW=rep(1,length(xX)),minSamp=length(xX))
 
       {#Functions used for bootstrap
 
@@ -142,4 +142,5 @@ condprob<-function(xX,xY,xImpair,ProbComp = c("gt","lt"),Exceed = c("gte","lte")
                            xYSort,xImpair,ProbComp,xWSort,o)[which(duplicated(xXSort)==FALSE)],
                             apply(bootcp,1,mean))
       names(xOutput)<-c(substitute(xX),"Raw.Data.Probability","Bootstrap.Probability")}
-      xOutput}
+      return(xOutput[1:minSamp,])
+}
