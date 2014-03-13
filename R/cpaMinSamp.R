@@ -25,22 +25,26 @@
 #' @examples
 #' bivec<-rbinom(100,1,0.5)
 #' cpaMinSamp(bivec,alpha=0.01)
+#' data(binCutoff)
+#' cpaMinSamp(binCutoff,alpha=0.01,n=10)
 cpaMinSamp<-function(x,R=100,n=5,alpha=0.05){
   
   orig<-vector("numeric",length=R)
   for(i in 1:R){
     orig[i]<-sum(sample(x,length(x),TRUE),na.rm=TRUE)/length(x)
   }
-  origCI<-quantile(orig,c(alpha/2,1-alpha/2))
   test<-TRUE
   while(test){
-    samp<-vector("numeric",length=n)
+    samp<-vector("numeric",length=R)
     for(i in 1:R){
       samp[i]<-sum(sample(x,n,TRUE),na.rm=TRUE)/n
     }
-    sampCI<-quantile(samp,c(alpha/2,1-alpha/2))
-    test<-ks.test(orig,samp)$p.value<alpha
+    pv<-suppressWarnings(ks.test(orig,samp,exact=TRUE)$p.value)
+    test<-pv<alpha
     n<-n+1
+    if(pv==0){
+      browser()
+    }
     if(n==length(x)){
       return(warning("all tested sample sizes resulted in different
                       distributions.  Try reducing alpha (e.g. 0.01)"))

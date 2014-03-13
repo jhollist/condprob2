@@ -42,5 +42,7 @@ returns a similar distribution is the minimum sample size
 \examples{
 bivec<-rbinom(100,1,0.5)
 cpaMinSamp(bivec,alpha=0.01)
+data(binCutoff)
+cpaMinSamp(binCutoff,alpha=0.01,n=10)
 }
 
