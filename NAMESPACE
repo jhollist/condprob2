@@ -1,2 +1,3 @@
+S3method(plot,condprobMin)
 export(condprob)
 export(cpaMinSamp)
