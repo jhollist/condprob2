@@ -3,8 +3,7 @@
 \title{Function condprob}
 \usage{
 condprob(xX, xY, xImpair, ProbComp = c("gt", "lt"), Exceed = c("gte",
-  "lte"), ci = FALSE, alpha = 0.05, R = 100, xW = rep(1, length(xX)),
-  minSamp = length(xX))
+  "lte"), ci = FALSE, alpha = 0.05, R = 100, xW = rep(1, length(xX)))
 }
 \arguments{
   \item{xX}{}
@@ -24,8 +23,6 @@ condprob(xX, xY, xImpair, ProbComp = c("gt", "lt"), Exceed = c("gte",
   \item{R}{}
 
   \item{xW}{}
-
-  \item{minSamp}{}
 }
 \description{
 This function calculates a conditional probability analysis
