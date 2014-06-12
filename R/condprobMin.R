@@ -7,9 +7,10 @@
 #' This is repeated R times and mean value is recorded for each iteration. Then starting 
 #' with the minimum sample size, the original dataset is sampled and the mean for the smaller
 #' sample is recorded.  The sample size is increased and process repeated.  The average of the 
-#' mean values for each sample size is recorded  
+#' mean values for each sample size is recorded.  This is an experimental function.  No 
+#' promises on its utility.  
 #' 
-#' This is an experimental function.  No promises on its utility.
+#' 
 #' 
 #' @return an list of class condprobMin is returned with two items.  A data frame containg
 #'          the sample size and the associated average mean value and a vector contain the
@@ -23,9 +24,9 @@
 #' @export
 #' @examples
 #' bivec<-rbinom(100,1,0.5)
-#' cpaMinSamp(bivec,alpha=0.01)
+#' plot(condprobMin(bivec))
 #' data(binCutoff)
-#' minSampDF<-cpaMinSamp(binCutoff,R=10)
+#' minSampDF<-condprobMin(binCutoff,R=10)
 #' plot(minSampDF)
 
 condprobMin <- function(x, R = 100, n = length(x)) {
