@@ -28,25 +28,25 @@
 #' minSampDF<-cpaMinSamp(binCutoff,R=10)
 #' plot(minSampDF)
 
-condprobMin<-function(x,R=100,n=length(x)){
-  xdf<-data.frame()
-  orig<-vector("numeric",length=R)
-  for(i in 1:R){
-    xo<-sample(x,length(x),TRUE)
-    orig[i]<-mean(xo)
-  }
-  for(i in 1:n){
-    samp<-data.frame()
-    for(j in 1:R){
-      xs<-sample(x,i,TRUE)
-      samp<-rbind(samp,data.frame(i,mean(xs)))
+condprobMin <- function(x, R = 100, n = length(x)) {
+    xdf <- data.frame()
+    orig <- vector("numeric", length = R)
+    for (i in 1:R) {
+        xo <- sample(x, length(x), TRUE)
+        orig[i] <- mean(xo)
     }
-    xdf<-rbind(xdf,data.frame(n=mean(samp[,1]),avgMean=mean(samp[,2],na.rm=T)))
-    if(i%%100==0){
-      print(paste(i,"out of",n, "completed."))
+    for (i in 1:n) {
+        samp <- data.frame()
+        for (j in 1:R) {
+            xs <- sample(x, i, TRUE)
+            samp <- rbind(samp, data.frame(i, mean(xs)))
+        }
+        xdf <- rbind(xdf, data.frame(n = mean(samp[, 1]), avgMean = mean(samp[, 2], na.rm = T)))
+        if (i%%100 == 0) {
+            print(paste(i, "out of", n, "completed."))
+        }
     }
-  }
-  xdf<-list(sampMeans=xdf,origMeans=orig)
-  class(xdf)<-"condprobMin"
-  return(xdf)
-}
+    xdf <- list(sampMeans = xdf, origMeans = orig)
+    class(xdf) <- "condprobMin"
+    return(xdf)
+} 

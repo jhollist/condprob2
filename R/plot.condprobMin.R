@@ -9,10 +9,10 @@
 #' @param alpha the alpha level for determining confidence intervals.  Default
 #'        is 0.05.
 #' @export
-plot.condprobMin<-function(cpMin,alpha=0.05){
-  with(cpMin[[1]],plot(avgMean,n))
-  abline(v=mean(cpMin[[2]]),col="green")
-  abline(v=quantile(cpMin[[2]],1-alpha/2),col="red")
-  abline(v=quantile(cpMin[[2]],alpha/2),col="red")
-  
-}
+plot.condprobMin <- function(cpMin, alpha = 0.05) {
+    with(cpMin[[1]], plot(avgMean, n))
+    abline(v = mean(cpMin[[2]]), col = "green")
+    abline(v = quantile(cpMin[[2]], 1 - alpha/2), col = "red")
+    abline(v = quantile(cpMin[[2]], alpha/2), col = "red")
+    
+} 

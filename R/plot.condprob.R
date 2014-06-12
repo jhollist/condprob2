@@ -3,6 +3,6 @@
 #' This function plots a condprob object
 #' 
 #' @export
-plot.condprob<-function(){
-  
-}
+plot.condprob <- function() {
+    
+} 
