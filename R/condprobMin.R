@@ -9,6 +9,8 @@
 #' sample is recorded.  The sample size is increased and process repeated.  The average of the 
 #' mean values for each sample size is recorded  
 #' 
+#' This is an experimental function.  No promises on its utility.
+#' 
 #' @return an list of class condprobMin is returned with two items.  A data frame containg
 #'          the sample size and the associated average mean value and a vector contain the
 #'          bootstrapped original mean values.
@@ -24,7 +26,9 @@
 #' cpaMinSamp(bivec,alpha=0.01)
 #' data(binCutoff)
 #' minSampDF<-cpaMinSamp(binCutoff,R=10)
-cpaMinSamp<-function(x,R=100,n=length(x)){
+#' plot(minSampDF)
+
+condprobMin<-function(x,R=100,n=length(x)){
   xdf<-data.frame()
   orig<-vector("numeric",length=R)
   for(i in 1:R){

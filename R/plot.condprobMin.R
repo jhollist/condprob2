@@ -1,7 +1,7 @@
 #' Function to plot condprobMin object
 #'
 #' This function plots minimum sample size vs average value of an input vector, which is
-#' usually to y-value in a \code{condprob2::condprob} analysis.
+#' usually the y-value in a \code{condprob2::condprob} analysis.
 #' The mean values are plotted vs sample size and the mean, upper limit and lower limit of
 #' the bootstrapped original values are shown
 #' 
