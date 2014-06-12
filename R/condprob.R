@@ -12,6 +12,12 @@
 #' @param R
 #' @param xW
 #' 
+#' @examples
+#' data(jeqdata_wq)
+#' ept<-jeqdata_wq$EPT.RICH
+#' pct_fn<-jeqdata_wq$PCT.FN
+#' cpa1<-condprob(pct_fn,ept,9,"lt","gte",T,R=1000)
+#' 
 #' @export
 
 condprob<-function(xX,xY,xImpair,ProbComp = c("gt","lt"),Exceed = c("gte","lte"),
@@ -142,5 +148,6 @@ condprob<-function(xX,xY,xImpair,ProbComp = c("gt","lt"),Exceed = c("gte","lte")
                            xYSort,xImpair,ProbComp,xWSort,o)[which(duplicated(xXSort)==FALSE)],
                             apply(bootcp,1,mean))
       names(xOutput)<-c(substitute(xX),"Raw.Data.Probability","Bootstrap.Probability")}
+      class(xOutput)<-"condprob"
       return(xOutput)
 }
