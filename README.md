@@ -1,4 +1,4 @@
-# Conditional Probability Analysis:`condprob`
+# Conditional Probability Analysis with `condprob`
 
 This repository is an R package for running a conditional probability analysis as outlined in [Paul and MacDonald (2005)][1] and [Hollister et al. 2008][2].  This method was originally developed as a way to examine probability of impairment of an ecological resource (e.g. streams or lakes) given a stressor amount. 
 
