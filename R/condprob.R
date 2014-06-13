@@ -148,5 +148,8 @@ condprob <- function(xX, xY, xImpair, ProbComp = c("gt", "lt"), Exceed = c("gte"
         names(xOutput) <- c(substitute(xX), "Raw.Data.Probability", "Bootstrap.Probability")
     }
     class(xOutput) <- "condprob"
+    params<-c(as.character(substitute(xX)), as.character(substitute(xY)), xImpair, ProbComp, Exceed, ci)
+    xOutput[[length(xOutput)+1]]<-params
+    names(xOutput)[length(xOutput)]<-"params"
     return(xOutput)
 } 

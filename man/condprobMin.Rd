@@ -31,17 +31,14 @@ value is recorded for each iteration. Then starting with
 the minimum sample size, the original dataset is sampled
 and the mean for the smaller sample is recorded.  The
 sample size is increased and process repeated.  The average
-of the mean values for each sample size is recorded
-}
-\details{
-This is an experimental function.  No promises on its
-utility.
+of the mean values for each sample size is recorded.  This
+is an experimental function.  No promises on its utility.
 }
 \examples{
 bivec<-rbinom(100,1,0.5)
-cpaMinSamp(bivec,alpha=0.01)
+plot(condprobMin(bivec))
 data(binCutoff)
-minSampDF<-cpaMinSamp(binCutoff,R=10)
+minSampDF<-condprobMin(binCutoff,R=10)
 plot(minSampDF)
 }
 
