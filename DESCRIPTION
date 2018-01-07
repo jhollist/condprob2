@@ -9,3 +9,4 @@ Description: The purpose of the condprob2 is to provide the tools to conduct a
     conditional probability analysis as described in Paul and Macdonald
     (200?) and Hollister et al. (2008).
 License: CC0
+RoxygenNote: 6.0.1
