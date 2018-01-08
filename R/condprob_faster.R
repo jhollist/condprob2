@@ -2,15 +2,15 @@
 #' 
 #' This function calculates a conditional probability analysis
 #'
-#' @param xX
-#' @param xY
-#' @param xImpair
-#' @param ProbComp
-#' @param Exceed
-#' @param ci
-#' @param alpha
-#' @param R
-#' @param xW
+#' @param xX description
+#' @param xY description
+#' @param xImpair description
+#' @param ProbComp description
+#' @param Exceed description
+#' @param ci description
+#' @param alpha description
+#' @param R description
+#' @param xW description
 #' 
 #' @examples
 #' data(jeqdata_wq)
@@ -19,7 +19,6 @@
 #' cpa1<-condprob_faster(pct_fn,ept,9,'lt','gte',T,R=1000)
 #' 
 #' @export
-
 condprob_faster <- function(xX, xY, xImpair, ProbComp = c("gt", "lt"), Exceed = c("gte", "lte"), ci = FALSE, alpha = 0.05, 
     R = 100, xW = rep(1, length(xX))) 
 {
@@ -69,26 +68,18 @@ condprob_faster <- function(xX, xY, xImpair, ProbComp = c("gt", "lt"), Exceed = 
       xxDenom <- vector("numeric", length(xxo))
       xxProb <- vector("numeric", length(xxo))
       
-        # Sets xImpair comparison - gt or lt
-        #if (tolower(xxProbComp) == "gt") {
-        #    xxgtlt_w <- expression(xxW[i:length(xxo)][xxY[i:length(xxo)] > xxImpair])
-        #}
-        #if (tolower(xxProbComp) == "lt") {
-        #    xxgtlt_w <- expression(xxW[i:length(xxo)][xxY[i:length(xxo)] < xxImpair])
-        #}
-        
-        
-        # Calculates Conditional Probability
-        for (i in xxo) {
-            if(xxProbComp == "gt"){
-              xxNum[i] <- sum(xxW[i:length(xxo)][xxY[i:length(xxo)] > xxImpair])/sum(xxW)
-            } else if(xxProbComp == "lt"){
-              xxNum[i] <- sum(xxW[i:length(xxo)][xxY[i:length(xxo)] < xxImpair])/sum(xxW)
-            }
-            xxDenom[i] <- sum(xxW[i:length(xxo)])/sum(xxW)
-            xxProb[i] <- xxNum[i]/xxDenom[i]
-        }
-        xxProb
+      # Calculates Conditional Probability
+      for (i in xxo) {
+        browser()
+          if(xxProbComp == "gt"){
+            xxNum[i] <- sum(xxW[i:length(xxo)][xxY[i:length(xxo)] > xxImpair])/sum(xxW)
+          } else if(xxProbComp == "lt"){
+            xxNum[i] <- sum(xxW[i:length(xxo)][xxY[i:length(xxo)] < xxImpair])/sum(xxW)
+          }
+          xxDenom[i] <- sum(xxW[i:length(xxo)])/sum(xxW)
+          xxProb[i] <- xxNum[i]/xxDenom[i]
+      }
+      xxProb
     }
     ### END CONDITIONAL PROBABILITY FUNCTION###
     

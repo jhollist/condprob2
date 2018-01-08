@@ -8,7 +8,23 @@ condprob_faster(xX, xY, xImpair, ProbComp = c("gt", "lt"), Exceed = c("gte",
   "lte"), ci = FALSE, alpha = 0.05, R = 100, xW = rep(1, length(xX)))
 }
 \arguments{
-\item{xW}{}
+\item{xX}{description}
+
+\item{xY}{description}
+
+\item{xImpair}{description}
+
+\item{ProbComp}{description}
+
+\item{Exceed}{description}
+
+\item{ci}{description}
+
+\item{alpha}{description}
+
+\item{R}{description}
+
+\item{xW}{description}
 }
 \description{
 This function calculates a conditional probability analysis
@@ -17,6 +33,6 @@ This function calculates a conditional probability analysis
 data(jeqdata_wq)
 ept<-jeqdata_wq$EPT.RICH
 pct_fn<-jeqdata_wq$PCT.FN
-cpa1<-condprob(pct_fn,ept,9,'lt','gte',T,R=1000)
+cpa1<-condprob_faster(pct_fn,ept,9,'lt','gte',T,R=1000)
 
 }

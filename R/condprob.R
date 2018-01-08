@@ -2,15 +2,15 @@
 #' 
 #' This function calculates a conditional probability analysis
 #'
-#' @param xX
-#' @param xY
-#' @param xImpair
-#' @param ProbComp
-#' @param Exceed
-#' @param ci
-#' @param alpha
-#' @param R
-#' @param xW
+#' @param xX description
+#' @param xY description
+#' @param xImpair description
+#' @param ProbComp description
+#' @param Exceed description
+#' @param ci description
+#' @param alpha description
+#' @param R description
+#' @param xW description
 #' 
 #' @examples
 #' data(jeqdata_wq)
