@@ -8,14 +8,19 @@ double xxImpair, char xxProbComp, NumericVector xxW, NumericVector xxo) {
 
   for(int i = 0; i < n; ++i) {
     IntegerVector idx = seq(i,n-1);
-    NumericVector xx(idx.size());
+    NumericVector xxw(idx.size());
     NumericVector xy(idx.size());
 
     xy = xxY[idx];
-    xx = xX[idx];
-    xxDenom[i] = sum(xx)/sum(xxW);
-    xx = xx[xy < xxImpair];
-    xxNum[i] = sum(xx)/sum(xxW);
+    xxw = xxW[idx];
+    xxDenom[i] = sum(xxw)/sum(xxW);
+    //if else not working
+    if(xxProbComp == "lt"){
+      xxw = xxw[xy < xxImpair];
+    }else{
+      xxw = xxw[xy > xxImpair];
+    }
+    xxNum[i] = sum(xxw)/sum(xxW);
     xxProb[i] = xxNum[i]/xxDenom[i];
   }
   return xxProb;
