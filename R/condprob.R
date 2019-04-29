@@ -2,15 +2,15 @@
 #' 
 #' This function calculates a conditional probability analysis
 #'
-#' @param xX description
-#' @param xY description
-#' @param xImpair description
-#' @param ProbComp description
-#' @param Exceed description
-#' @param ci description
-#' @param alpha description
-#' @param R description
-#' @param xW description
+#' @param xX numeric vector for conditional (independent) variable
+#' @param xY numeric vector for dependent variable, conditional on \code{xX}
+#' @param xImpair numeric threshold for impairment of \code{xY}
+#' @param ProbComp chr string
+#' @param Exceed chr string
+#' @param ci logical to return confidence interval for estimated likelihood of impairment
+#' @param alpha numeric for alpha level defining confidence
+#' @param R numeric for number of bootstrap iterations to estimate confidence
+#' @param xW numeric vector with length equal to \code{xX}
 #' 
 #' @examples
 #' data(jeqdata_wq)

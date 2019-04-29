@@ -16,10 +16,26 @@
 #'             Analysis. Journal of Environmental Quality. 37(6):2392-2396.
 #'             \href{http://dx.doi.org/10.2134/jeq2007.0536}{Link}
 #' @export
+#' @import ggplot2
 #' @method plot condprob
 plot.condprob <- function(cpobj, ...) {
-    plot(cpobj[[1]],cpobj[[2]],xlab = names(cpobj)[1] ,ylab = names(cpobj)[2],
-         ...)
-    lines(cpobj[[1]],cpobj[[4]])
-    lines(cpobj[[1]],cpobj[[5]])
+
+  toplo <- data.frame(
+    x = cpobj[[1]],
+    y = cpobj[[2]],
+    ylo = cpobj[[4]],
+    yhi = cpobj[[5]]
+  )
+  xlb <- names(cpobj)[1]
+  ylb <- names(cpobj)[2]
+  
+  p <- ggplot(toplo, aes(x = x, y = y)) + 
+    geom_point() + 
+    geom_line(aes(y = ylo), linetype = 'dashed') + 
+    geom_line(aes(y = yhi), linetype = 'dashed') + 
+    xlab(xlb) + 
+    ylab(ylb)
+  
+  return(p)
+  
 } 

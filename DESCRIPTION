@@ -2,10 +2,19 @@ Package: condprob2
 Type: Package
 Title: Package to conduct coniditional probability analysis
 Version: 2.0
-Author: Jeffrey W. Hollister
+Author@R:
+  person(given = "Jeffrey W", family = "Hollister",
+    role = c("aut","cre"),
+    email = "Hollister.Jeff@epa.gov"),
+  person(given = "Marcus W", family = "Beck", 
+    role = c("ctb"),
+    email = "marcusb@sccwrp.gov")
+    )
 Maintainer: Jeffrey W. Hollister <hollister.jeff@epa.gov>
 Description: The purpose of the condprob2 is to provide the tools to conduct a
     conditional probability analysis as described in Paul and Macdonald
     (200?) and Hollister et al. (2008).
 License: CC0
-RoxygenNote: 6.0.1
+Imports:
+  ggplot2
+RoxygenNote: 6.1.0
