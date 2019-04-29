@@ -4,8 +4,9 @@
 \alias{condprob_faster}
 \title{Function condprob}
 \usage{
-condprob_faster(xX, xY, xImpair, ProbComp = c("gt", "lt"), Exceed = c("gte",
-  "lte"), ci = FALSE, alpha = 0.05, R = 100, xW = rep(1, length(xX)))
+condprob_faster(xX, xY, xImpair, ProbComp = c("gt", "lt"),
+  Exceed = c("gte", "lte"), ci = FALSE, alpha = 0.05, R = 100,
+  xW = rep(1, length(xX)))
 }
 \arguments{
 \item{xX}{description}

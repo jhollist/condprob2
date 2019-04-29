@@ -5,26 +5,27 @@
 \title{Function condprob}
 \usage{
 condprob(xX, xY, xImpair, ProbComp = c("gt", "lt"), Exceed = c("gte",
-  "lte"), ci = FALSE, alpha = 0.05, R = 100, xW = rep(1, length(xX)))
+  "lte"), ci = FALSE, alpha = 0.05, R = 100, xW = rep(1,
+  length(xX)))
 }
 \arguments{
-\item{xX}{description}
+\item{xX}{numeric vector for conditional (independent) variable}
 
-\item{xY}{description}
+\item{xY}{numeric vector for dependent variable, conditional on \code{xX}}
 
-\item{xImpair}{description}
+\item{xImpair}{numeric threshold for impairment of \code{xY}}
 
-\item{ProbComp}{description}
+\item{ProbComp}{chr string}
 
-\item{Exceed}{description}
+\item{Exceed}{chr string}
 
-\item{ci}{description}
+\item{ci}{logical to return confidence interval for estimated likelihood of impairment}
 
-\item{alpha}{description}
+\item{alpha}{numeric for alpha level defining confidence}
 
-\item{R}{description}
+\item{R}{numeric for number of bootstrap iterations to estimate confidence}
 
-\item{xW}{description}
+\item{xW}{numeric vector with length equal to \code{xX}}
 }
 \description{
 This function calculates a conditional probability analysis
